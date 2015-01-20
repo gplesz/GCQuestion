@@ -16,13 +16,18 @@ namespace GCQuestion
             {
                 var inherited = new GCInherited(i);
 
+                //so do not run
+                //var gcbase = new GCBase(i);
+
                 //if explicit set to null, the finalizer started:
                 //inherited = null;
             }
             GC.Collect(2);
             GC.WaitForPendingFinalizers();
-            GC.WaitForFullGCApproach(-1);
-            GC.WaitForFullGCComplete(-1);
+
+            //GC.WaitForFullGCApproach(-1);
+            //GC.WaitForFullGCComplete(-1);
+
             Console.ReadLine();
         }
     }
